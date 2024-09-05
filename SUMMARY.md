@@ -5,3 +5,7 @@
 * [Hack The Box](README.md)
   * [Desafios](capture-the-flag/hack-the-box/challenges/README.md)
     * [RenderQuest](capture-the-flag/hack-the-box/challenges/renderquest.md)
+
+## Recursos <a href="#resources" id="resources"></a>
+
+* [Plataformas](resources/plataformas.md)
