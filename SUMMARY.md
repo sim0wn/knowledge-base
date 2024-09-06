@@ -9,3 +9,4 @@
 ## Recursos <a href="#resources" id="resources"></a>
 
 * [Plataformas](resources/plataformas.md)
+* [Cursos](resources/cursos.md)
