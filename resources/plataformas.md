@@ -4,13 +4,21 @@
 
 A [Hack The Box](https://app.hackthebox.com/) possui múltiplas plataformas voltadas para entusiastas em segurança cibernética, voltando-se mais a prática da segurança ofensiva. A plataforma principal (onde se concentram os conteúdos para hackear, como desafios e máquinas virtuais vulneráveis) é mais indicada para usuários que já têm alguma experiência, visto que desde o cadastro já é necessário você "hackear" a plataforma para obter acesso.
 
-### Academy
+{% tabs %}
+{% tab title="Hack The Box Academy" %}
+A plataforma [Academy](https://academy.hackthebox.com/) pode ser considerada um ponto de partida para estudantes de cibersegurança. Ela proporciona um ambiente de aprendizagem que pode auxiliar desde os iniciantes aos mais experientes, com seu conteúdo dividido em módulos classificados por níveis[^1]. Qualquer usuário que se cadastrar terá acesso aos módulos do [nível fundamental](#user-content-fn-2)[^2] gratuitamente, sendo que é necessário completar os módulos para adquirir "cubos", uma espécie de moeda dentro da plataforma que pode ser trocada pelo acesso a outros módulos. Caso você queria se aprofundar na plataforma, será necessário pagar para adquirir mais cubos ou assinar a plataforma.
 
-A plataforma [HTB Academy](https://academy.hackthebox.com/) pode ser considerada um ponto de partida para estudantes de cibersegurança. Ela proporciona um ambiente de aprendizagem que pode auxiliar desde os iniciantes aos mais experientes, com seu conteúdo dividido em módulos classificados por níveis[^1]. Qualquer usuário que se cadastrar terá acesso aos módulos do [nível fundamental](#user-content-fn-2)[^2] gratuitamente, sendo que é necessário completar os módulos para adquirir "cubos", uma espécie de moeda dentro da plataforma que pode ser trocada pelo acesso a outros módulos. Caso você queria se aprofundar na plataforma, será necessário pagar para adquirir mais cubos ou assinar a plataforma. Um detalhe importante para estudantes universitários é que a plataforma dispõe de uma opção de assinatura mais acessível especialmente para eles.
+{% hint style="info" %}
+Estudantes têm acesso a um desconto exclusivo na assinatura, bastando apenas realizar o cadastro com o e-mail institucional.
+{% endhint %}
+{% endtab %}
 
-### Capture The Flag
+{% tab title="Hack The Box CTF" %}
+Já na plataforma de [Capture The Flag](https://ctf.hackthebox.com/), usuários mais experientes podem se reunir em times e se cadastrar em campeonatos da plataforma. Com isso, é possível concorrer a prêmios e obter destaque. Além disso, o Hack The Box organiza campeonatos anuais, tais como:
 
-Já na plataforma [HTB CTF](https://ctf.hackthebox.com/), usuários mais experientes podem se reunir em times e se cadastrar em campeonatos da plataforma. Com isso, é possível concorrer a prêmios e obter destaque.
+<table data-view="cards"><thead><tr><th align="center"></th><th></th></tr></thead><tbody><tr><td align="center"><strong>University</strong></td><td>Destinado aos estudantes universitários.</td></tr><tr><td align="center"><strong>Business</strong></td><td>Destinado às organizações.</td></tr><tr><td align="center"><strong>Cyber Apocalypse</strong></td><td>Um evento organizado anualmente que não tem restrições e permite a participação do público geral.</td></tr></tbody></table>
+{% endtab %}
+{% endtabs %}
 
 ## Try Hack Me
 
