@@ -22,7 +22,7 @@ Enviei essa requisição para o Burp Repeater, removi o corpo da requisição (n
 
 > Para solucionar esse laboratório, explore um endpoint de API escondido para comprar uma **Lightweight l33t Leather Jacket**. Você pode se autenticar usando as credenciais `wiener:peter`.
 
-Como no desafio [anterior](api-testing.md#utilizando-a-documentacao-para-explorar-um-endpoint-de-api), podemos fazer login e navegar pela aplicação. Ao adicionar um produto no carrinho, é possível observar no histórico do Burp uma requisição ao endpoint `/api/products/1/price`, que retorna um JSON com o valor do produto. É normal que na construção de endpoints de API elas utilizem os métodos HTTP para identificar qual ação deve ser realizada.  Se enviarmos essa requisição para o Burp Repeater, podemos alterá-la e observar o comportamento da aplicação. Ao mudar o método para PATCH e adicionar um JSON ao corpo da requisição com um objeto "price" recebendo o valor 0, da seguinte forma:
+Como no desafio [anterior](api-testing.md#utilizando-a-documentacao-para-explorar-um-endpoint-de-api), podemos fazer login e navegar pela aplicação. Ao adicionar um produto no carrinho, é possível observar no histórico do Burp uma requisição ao endpoint `/api/products/1/price`, que retorna um JSON com o valor do produto. É normal que na construção de endpoints de API elas utilizem os métodos HTTP para identificar qual ação deve ser realizada.  Se enviarmos essa requisição para o Burp Repeater, podemos alterá-la e observar o comportamento da aplicação. Ao mudar o método para PATCH, adicionar um JSON ao corpo da requisição com um objeto "price" recebendo o valor 0, da seguinte forma:
 
 ```json
 {
@@ -30,4 +30,4 @@ Como no desafio [anterior](api-testing.md#utilizando-a-documentacao-para-explora
 }
 ```
 
-e enviar, percebe-se que a aplicação apresenta uma resposta bem-sucedida indicando que o valor do produto agora é zero. Por fim, para resolver o desafio, basta adicionar uma **Lightweight l33t Leather Jacket** ao carrinho e prosseguir com a compra. Feito isso, o laboratório será marcado como resolvido.
+adicionar o cabeçalho `Content-Type: application/json` e enviar, percebe-se que a aplicação apresenta uma resposta bem-sucedida indicando que o valor do produto agora é zero. Por fim, para resolver o desafio, basta adicionar uma **Lightweight l33t Leather Jacket** ao carrinho e prosseguir com a compra. Feito isso, o laboratório será marcado como resolvido.
