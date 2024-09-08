@@ -1,5 +1,5 @@
 ---
-cover: ../.gitbook/assets/ctfwsabanner.png
+cover: ../../.gitbook/assets/ctfwsabanner.png
 coverY: 21.237333333333336
 layout:
   cover:
@@ -19,4 +19,4 @@ layout:
 
 # Web Security Academy
 
-Resolução dos laboratórios da [Web Security Academy](../resources/plataformas.md#web-security-academy) organizados de acordo com as trilhas de aprendizagem propostas pela plataforma.
+Resolução dos laboratórios da [Web Security Academy](../../resources/plataformas.md#web-security-academy) organizados de acordo com as trilhas de aprendizagem propostas pela plataforma.
