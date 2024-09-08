@@ -31,3 +31,31 @@ Como no desafio [anterior](api-testing.md#utilizando-a-documentacao-para-explora
 ```
 
 adicionar o cabeçalho `Content-Type: application/json` e enviar, percebe-se que a aplicação apresenta uma resposta bem-sucedida indicando que o valor do produto agora é zero. Por fim, para resolver o desafio, basta adicionar uma **Lightweight l33t Leather Jacket** ao carrinho e prosseguir com a compra. Feito isso, o laboratório será marcado como resolvido.
+
+## Explorando uma vulnerabilidade de atribuição em massa
+
+> Para solucionar o laboratório, encontre e explore a vulnerabilidade de atribuição em massa para comprar uma **Lightweight l33t Leather Jacket**. Você pode se autenticar utilizando as credenciais `wiener:peter`.
+
+Nesse laboratório, pode-se autenticar, navegar pela aplicação e adicionar o item pedido na descrição ao carrinho. Após isso, é possível verificar no histórico de requisições do Burp uma requisição `GET` ao endpoint `/api/checkout` que retorna um objeto JSON com diversas informações, tal como representado logo abaixo:
+
+{% code overflow="wrap" %}
+```json
+{
+"chosen_discount":
+    {
+        "percentage":0
+    },
+"chosen_products":
+    [
+        {
+            "product_id":"1",
+            "name":"Lightweight \"l33t\" Leather Jacket",
+            "quantity":6,
+            "item_price":133700
+        }
+    ]
+}
+```
+{% endcode %}
+
+Observe o objeto `chosen_discount` que possui um atributo `percentage`. Ao mudar o método da requisição ao endpoint `/api/checkout` para `POST` e enviar um objeto alterando o atributo `percentage` do objeto `chose_discount` para 100, obtém-se 100% de desconto no produto, permitindo que ele seja comprado. Com isso, o laboratório é resolvido.
