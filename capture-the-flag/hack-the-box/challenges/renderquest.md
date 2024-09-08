@@ -8,7 +8,7 @@ Como descrito, esse desafio consiste de uma aplicação web que carrega template
 
 Na página inicial, é possível ver alguns dados que são utilizados para carregar os templates e um formulário para informar uma URL para o template.&#x20;
 
-<figure><img src="../../../.gitbook/assets/HTB RenderQuest - Homepage.png" alt="Página inicial da aplicação &#x22;RenderQuest&#x22;. Apresenta uma série de informações que podem ser consumidas através de um template TPL. Por fim, fornece um formulário com um campo que permite informar a URL por onde um template TPL pode ser acessado."><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbchallengesrenderquesthomepage.png" alt="Página inicial da aplicação &#x22;RenderQuest&#x22;. Apresenta uma série de informações que podem ser consumidas através de um template TPL. Por fim, fornece um formulário com um campo que permite informar a URL por onde um template TPL pode ser acessado."><figcaption></figcaption></figure>
 
 Vale notar também que a URL possui um parâmetro "page", o qual indica a fonte da qual o template será carregado. Analisando o código-fonte da página, é possível encontrar a função responsável por processar e carregar o conteúdo da URL informada, além de outras funções interessantes.
 

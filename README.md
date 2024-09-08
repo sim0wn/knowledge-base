@@ -2,7 +2,7 @@
 description: >-
   Soluções dos desafios que deixaram de pontuar na plataforma Hack The Box.
   Confira o passo a passo de como cada desafio pode ser explorado!
-cover: .gitbook/assets/Hack The Box Banner
+cover: .gitbook/assets/ctfhtbbanner.png
 coverY: -1.9857297297297394
 layout:
   cover:
