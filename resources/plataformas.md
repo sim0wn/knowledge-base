@@ -32,6 +32,10 @@ A [LetsDefend](https://app.letsdefend.io/) é voltada especificamente para o apr
 
 A [Cisco Networking Academy](https://www.netacad.com/) é uma plataforma que oferece diversos cursos na área de tecnologia, que vão desde redes de computadores e cibersegurança a programação e inteligência artificial.
 
+## Web Security Academy
+
+Uma [plataforma](https://portswigger.net/web-security/) da PortSwigger[^5] para aprender sobre testes de invasão em aplicações web. Essa iniciativa conta com uma série de módulos explicando sobre vulnerabilidades web e possui mais de 250 laboratórios para você colocar em prática o que aprender. Os desafios são divididos em níveis e organizados em trilhas de aprendizagem, o que facilita o aprendizado pois assim você pode escolher estudar um tópico de cada vez.
+
 [^1]: tiers
 
 [^2]: referido como "Tier 0"
@@ -39,3 +43,5 @@ A [Cisco Networking Academy](https://www.netacad.com/) é uma plataforma que ofe
 [^3]: que recebem o nome de "rooms" ou "salas"
 
 [^4]: Centro de Operações de Segurança
+
+[^5]: empresa responsável pelo Burp Suite
