@@ -59,3 +59,17 @@ Nesse laboratório, pode-se autenticar, navegar pela aplicação e adicionar o i
 {% endcode %}
 
 Observe o objeto `chosen_discount` que possui um atributo `percentage`. Ao mudar o método da requisição ao endpoint `/api/checkout` para `POST` e enviar um objeto alterando o atributo `percentage` do objeto `chose_discount` para 100, obtém-se 100% de desconto no produto, permitindo que ele seja comprado. Com isso, o laboratório é resolvido.
+
+## Explorando server-side parameter pollution em uma query string
+
+> Para solucionar o laboratório, faça autentique-se como `administrator` e remova o usuário `carlos`.
+
+Nesse laboratório, é possível explorar a funcionalidade de recuperação de senha. Com um proxy interceptando as requisições, pode-se navegar para `My account` no menu e clicar em `Forgot password?`. Preencha e envie o formulário, observando as requisições que estão sendo salvas. Dentre as requisições, é possível encontrar o arquivo `/static/js/forgotPassword.js` que possui um código em JavaScript para realizar o processo de recuperação de senha. Se modificarmos a requisição POST feita anteriormente no formulário de recuperação de senha, podemos ver que ela recebe dois parâmetros, sendo eles um token CSRF e o outro o nome de usuário que informamos. Se inserirmos um `%23` (que no caso é um cerquilha URL-encoded) no final do corpo da requisição, a aplicação acusa um erro informando que o parâmetro `field` não foi informado. Isso significa que quando o cliente enviou a requisição ao servidor, o `%23` truncou a requisição e um atributo `field` que era adicionado ao final do corpo da requisição não foi interpretado pelo servidor, visto que qualquer dado inserido a partir do `%23` deixou de ser interpretado. Com isso, podemos continuar a exploração adicionando o parâmetro `field` manualmente. Para isso, pode-se utilizar um `%26`, que é um `&` URL-encoded e passar logo a seguir o parâmetro `field`, ficando da seguinte forma:
+
+{% code overflow="wrap" %}
+```http
+csrf=QoNwa4oS40ngWOJCWXTk7277gjouUQH9&username=administrator%26field=A%23
+```
+{% endcode %}
+
+Ao enviar a requisição dessa forma, a aplicação retorna uma resposta com o status `400` e um erro informando que o valor informado ao parâmetro `field` não é válido. Se analisarmos o arquivo JavaScript citado anteriormente, percebe-se que para recuperação de senha é necessário enviar uma requisição `GET` informando o parâmetro `reset_token`. Ou seja, `reset_token` é um atributo processado pela aplicação e pode ser um valor válido para o parâmetro `field`. Definido o `reset_token` no `field` e enviando a requisição, o servidor responde com o token para redefinição de senha do usuário administrador. Agora, basta realizar uma requisição `GET` para `/forgot-password?reset-token=`<mark style="color:purple;">`TOKEN_OBTIDO`</mark> e informar uma nova senha para o usuário `administrator`. Com isso, é possível fazer login na plataforma e acessar o painel do administrador, possibilitando a remoção do usuário `carlos` e obtendo sucesso no desafio.
