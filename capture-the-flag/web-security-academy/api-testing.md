@@ -60,7 +60,7 @@ Nesse laboratório, pode-se autenticar, navegar pela aplicação e adicionar o i
 
 Observe o objeto `chosen_discount` que possui um atributo `percentage`. Ao mudar o método da requisição ao endpoint `/api/checkout` para `POST` e enviar um objeto alterando o atributo `percentage` do objeto `chose_discount` para 100, obtém-se 100% de desconto no produto, permitindo que ele seja comprado. Com isso, o laboratório é resolvido.
 
-## Explorando server-side parameter pollution em uma query string
+## Explorando poluição de parâmetro do lado servidor em uma string de consulta
 
 > Para solucionar o laboratório, faça autentique-se como `administrator` e remova o usuário `carlos`.
 

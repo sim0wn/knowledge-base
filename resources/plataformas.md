@@ -36,6 +36,10 @@ A [Cisco Networking Academy](https://www.netacad.com/) é uma plataforma que ofe
 
 Uma [plataforma](https://portswigger.net/web-security/) da PortSwigger[^5] para aprender sobre testes de invasão em aplicações web. Essa iniciativa conta com uma série de módulos explicando sobre vulnerabilidades web e possui mais de 250 laboratórios para você colocar em prática o que aprender. Os desafios são divididos em níveis e organizados em trilhas de aprendizagem, o que facilita o aprendizado pois assim você pode escolher estudar um tópico de cada vez.
 
+## Investiga OSINT
+
+Uma [plataforma](https://investigaosint.com.br/) para agregar ferramentas e recursos relacionados a inteligência de fontes abertas (Open-Source Intelligence).
+
 [^1]: tiers
 
 [^2]: referido como "Tier 0"
