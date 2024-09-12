@@ -24,4 +24,10 @@ Para resolução desse desafio, é preciso explorar a falta de validação dos d
 
 Para solucionar esse desafio, basta explorar a falta de validação da aplicação na funcionalidade de feedback. Se interceptarmos uma requisição de feedback, alterarmos o valor do atributo `rating` para 0 e encaminharmos, a aplicação não valida e o desafio é solucionado.
 
+## Empty User Registration
+
+> Registre um usuário com os campos de e-mail e senha vazios.
+
+Esse desafio é bem simples e requer apenas interceptar a requisição de registro de usuário e informar strings vazias aos campos `email`, `password` e `passwordConfirmation`. Enviando a requisição com esses campos vazios, a aplicação não valida a entrada e permite o registro de um usuário sem esses campos, resultando na resolução do desafio.
+
 [^1]: "Parede de Fotos" no menu de navegação lateral&#x20;
