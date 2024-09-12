@@ -6,11 +6,11 @@
 
 Se acessarmos o mural[^1], vemos que uma das imagens não carregou corretamente. Ao inspecionar a página e investigar a URL dessa imagem, vemos que ela possui um emoji em sua URL. Nesse instante, o título do desafio é uma excelente dica, pois nesse caso a aplicação não codificou corretamente a URL e renderizou o emoji, fazendo com que a aplicação não encontrasse a imagem. Para corrigir isso, podemos copiar essa URL e codificar ela usando o próprio console das ferramentas de desenvolvedor e função `encodeURIComponent` do JavaScript.
 
-<figure><img src="../../.gitbook/assets/ctfjuice_shopIIVencoded_uri.png" alt=""><figcaption><p>Juice Shop - Codificando a URL da imagem adequadamente</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ctfjuice_shopiivencoded_uri.png" alt=""><figcaption><p>Juice Shop - Codificando a URL da imagem adequadamente</p></figcaption></figure>
 
 Agora, basta trocarmos a URL não codificada pela codificada e a imagem irá carregar corretamente, solucionando o desafio.
 
-<figure><img src="../../.gitbook/assets/ctfjuice_shopIIVbjoern_cat.png" alt=""><figcaption><p>Juice Shop - Recuperando a imagem com URL não codificada</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ctfjuice_shopiivbjoern_cat.png" alt=""><figcaption><p>Juice Shop - Recuperando a imagem com URL não codificada</p></figcaption></figure>
 
 ## Repetitive Registration
 

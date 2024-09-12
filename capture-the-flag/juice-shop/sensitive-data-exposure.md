@@ -4,17 +4,13 @@
 
 > Acesse um documento confidencial.
 
-Acessando o menu de navegação lateral, é possível encontrar a página "Sobre nós". Nela, é possível observar um link para acesso aos "termos de uso" da aplicação. Ao abrir ele, somos encaminhados para um diretório `/ftp`.
-
-<div>
+Acessando o menu de navegação lateral, é possível encontrar a página "Sobre nós". Nela, é possível observar um link para acesso aos "termos de uso" da aplicação.
 
 <figure><img src="../../.gitbook/assets/ctfjuice_shopdata_exposureceabout_us.png" alt=""><figcaption><p>Juice Shop - Sobre nós</p></figcaption></figure>
 
- 
+Ao abrir ele, somos encaminhados para um diretório `/ftp`:
 
 <figure><img src="../../.gitbook/assets/ctfjuice_shopdata_exposurelegal_md.png" alt=""><figcaption><p>Juice Shop - Termos de Uso</p></figcaption></figure>
-
-</div>
 
 Se voltarmos um diretório do arquivo aberto (isto é, acessarmos o diretório `/ftp`), é possível ver a listagem de arquivos desse diretório. Para solucionar o desafio, basta abrir o arquivo `aquisitions.md`.
 

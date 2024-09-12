@@ -1,3 +1,7 @@
+---
+description: Um guia detalhado de como resolver os desafios do OWASP Juice Shop.
+---
+
 # Juice Shop
 
 De acordo com [seu repositório do GitHub](https://github.com/juice-shop/juice-shop),

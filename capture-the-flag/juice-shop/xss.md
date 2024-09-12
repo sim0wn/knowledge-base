@@ -26,4 +26,4 @@ Para esse desafio, podemos navegar pela aplicação e encontrar páginas onde al
 
 Se manipularmos esse ID, informando o payload de XSS, obtemos o seguinte resultado e o desafio é solucionado:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Juice Shop - XSS refletido</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ctfjuice_shopxssreflected_xss.png" alt=""><figcaption><p>Juice Shop - XSS refletido</p></figcaption></figure>
