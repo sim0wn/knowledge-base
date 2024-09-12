@@ -70,3 +70,7 @@ Observe que dentro os atributos retornados para cada feedback está o `rating`, 
 ```
 
 Podemos manipular essa requisição alterando o método para `GET` e adicionar um `/1` na URL, ficando `/api/Feedbacks/1`. Caso exista um feedback com o id 1, ele irá carregar esse feedback. Com isso, podemos tentar alterar o método para `DELETE` e ver como a aplicação se comporta. Nesse caso, a aplicação responde com o status de sucesso, e se tentarmos listar os feedbacks novamente, o feedback com id 1 não aparece. Ou seja, a aplicação não realizou nenhuma validação e foi possível remover o feedback com base em seu id. Agora basta unirmos todas essas informações para resolver o desafio. Podemos listar todos os feedbacks com id 5 e removê-los.
+
+{% hint style="info" %}
+É possível resolver esse desafio apenas acessando o painel de administrador e removendo os feedbacks. Entretanto, a exploração da API é um cenário mais realístico e aplicável.
+{% endhint %}
