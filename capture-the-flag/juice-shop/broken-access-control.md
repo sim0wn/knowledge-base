@@ -74,3 +74,9 @@ Podemos manipular essa requisição alterando o método para `GET` e adicionar u
 {% hint style="info" %}
 É possível resolver esse desafio apenas acessando o painel de administrador e removendo os feedbacks. Entretanto, a exploração da API é um cenário mais realístico e aplicável.
 {% endhint %}
+
+## Forged Feedback
+
+> Faça um comentário em nome de outro usuário.
+
+Para esse desafio, podemos interceptar a requisição de envio de feedback e alterar o parâmetro `UserId` no corpo da requisição. Colocando o id de outro usuário e enviando, a aplicação não realiza a devida validação e publica o comentário como se outro usuário tivesse publicado, resultando na resolução do desafio.

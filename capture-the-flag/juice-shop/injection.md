@@ -38,6 +38,26 @@ SELECT * FROM Users WHERE email = '' OR 1=1-- -' AND password = '96ca9d2f94b871e
 
 Ou seja, a consulta está **PEDINDO** (SELECT) para o banco de dados uma instância **DA** **ENTIDADE** (FROM) `Users` **A QUAL** (WHERE) o campo `email` seja vazio (email='') **OU** o numeral 1 seja igual a 1 (1=1). Por fim, é utilizado o `-- -` para indicar que toda instrução a partir da que informamos seja considerada um comentário e não seja processada pelo banco de dados. Dessa forma, a instrução é encerrada e como a condição 1=1 só pode ser verdadeira, o banco de dados entende que precisa retornar o primeiro resultado da tabela, que nesse caso é o `admin`, o que nos garante acesso à conta do administrador e soluciona o desafio.
 
+## Login Jim
 
+> Faça login com a conta do Jim.
+
+Agora que sabemos da vulnerabilidade de SQL injection, basta manipularmos a query para fazer login como o usuário Jim. Usando o payload `jim@juice-sh.op' -- -`, a query será construída da seguinte forma:
+
+```sql
+SELECT * FROM Users WHERE email = 'jim@juice-sh.op'-- -' AND password = '96ca9d2f94b871e6933b51800e24e917' AND deletedAt IS NULL
+```
+
+Como o restante da query foi comentado, ela está apenas indicando que deveria ser buscado o usuário com o e-mail `jim@juice-sh.op`. Com isso, somos capazes de fazer login como o usuário Jim e o desafio é solucionado.
+
+## Login Bender
+
+> Faça login com a conta do Bender.
+
+Seguinte o mesmo princípio do desafio anterior, podemos apenas alterar o e-mail para `bender@juice-sh.op`, resultando na seguinte query:
+
+```sql
+SELECT * FROM Users WHERE email = 'bender@juice-sh.op'-- -' AND password = '96ca9d2f94b871e6933b51800e24e917' AND deletedAt IS NULL
+```
 
 [^1]: a parte da aplicação responsável por tratar as consultas ao banco de dados

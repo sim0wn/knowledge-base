@@ -11,6 +11,7 @@
   * [Broken Access Control](capture-the-flag/juice-shop/broken-access-control.md)
   * [Broken Authentication](capture-the-flag/juice-shop/broken-authentication.md)
   * [Cross-Site Scripting (XSS)](capture-the-flag/juice-shop/xss.md)
+  * [Cryptographic Issues](capture-the-flag/juice-shop/cryptographic-issues.md)
   * [Improper Input Validation](capture-the-flag/juice-shop/improper-input-validation.md)
   * [Injection](capture-the-flag/juice-shop/injection.md)
   * [Miscellaneous](capture-the-flag/juice-shop/miscellaneous.md)
