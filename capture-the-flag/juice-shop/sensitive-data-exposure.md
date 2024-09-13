@@ -31,3 +31,19 @@ Para esse desafio, podemos acessar o painel de administrador e obter o e-mail do
 > Determine a resposta da pergunta de segurança do John com base num upload feito por ele ao mural de fotos e use-a para redefinir sua senha por meio do mecanismo de redefinição de senha.
 
 Para esse desafio, podemos procurar pelo foto publicada pelo John e transferir ela. A partir disso, podemos usar uma ferramenta que permite a [geolocalização](https://jimpl.com/) com base nos metadados da imagem. Por fim, podemos acessar a funcionalidade de redefinição de senha, preencher o e-mail e a nova senha e informar a resposta para a pergunta de segurança, que nesse caso é `Daniel Boone National Forest`, local favorito do John para hiking.
+
+## NFT Takeover
+
+> Se aposse da carteira contendo nosso Soul Bound Token (NFT) oficial.
+
+Para esse desafio, podemos nos aproveitar da exposição acidental de uma [seed phrase](https://crypto.com/university/pt-br/seed-phrases-for-crypto-wallets) na seção `Sobre Nós` da aplicação:
+
+<figure><img src="../../.gitbook/assets/ctfjuice_shopdata_exposureseed_phrase.png" alt=""><figcaption><p>Juice Shop - Seed phrase exposta</p></figcaption></figure>
+
+Com isso, podemos usar um serviço de carteira de criptomoedas (no meu caso, utilizei a extensão do [MetaMask](https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/)) para recuperar a chave privada da carteira gerada com essa seed phrase. Depois, basta copiar a chave privada gerada:
+
+```
+0x5bcc3e9d38baa06e7bfaab80ae5957bbe8ef059e640311d7d6d465e6bc948e3e
+```
+
+Por fim, conforme especificado no comentário em que a seed phrase foi exposta, inserir no endpoint `/juicy-nft` para resolver o desafio.
