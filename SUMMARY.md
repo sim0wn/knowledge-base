@@ -5,7 +5,7 @@
 * [Hack The Box](README.md)
   * [Desafios](capture-the-flag/hack-the-box/challenges/README.md)
     * [Web](capture-the-flag/hack-the-box/challenges/web/README.md)
-      * [C. O. P](capture-the-flag/hack-the-box/challenges/c.-o.-p.md)
+      * [C. O. P](capture-the-flag/hack-the-box/challenges/web/cult-of-pickle.md)
       * [Neonify](capture-the-flag/hack-the-box/challenges/web/neonify.md)
       * [RenderQuest](capture-the-flag/hack-the-box/challenges/renderquest.md)
     * [Photon Lockdown](capture-the-flag/hack-the-box/challenges/photon-lockdown.md)
