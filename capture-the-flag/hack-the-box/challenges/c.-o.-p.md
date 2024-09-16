@@ -4,11 +4,11 @@
 
 A descrição por si só dá uma dica muito importante para a resolução desse desafio. Podemos baixar o código-fonte da aplicação e ver que se trata de uma aplicação web em Python utilizando Flask. Temos apenas dois endpoints, sendo que um trás a listagem dos produtos cadastrados:
 
-<figure><img src="../../../../.gitbook/assets/ctfhtbchallengescopindex.png" alt=""><figcaption><p>C. O. P - Página inicial da aplicação</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbchallengescopindex.png" alt=""><figcaption><p>C. O. P - Página inicial da aplicação</p></figcaption></figure>
 
 E o outro, `/view/:id` trás informações sobre um produto com base no id informado.
 
-<figure><img src="../../../../.gitbook/assets/ctfhtbchallengescopview.png" alt=""><figcaption><p>C. O. P - Detalhes do produto</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbchallengescopview.png" alt=""><figcaption><p>C. O. P - Detalhes do produto</p></figcaption></figure>
 
 Podemos começar analisando o código-fonte do último endpoint, visto que ele permite a entrada de dados.
 
