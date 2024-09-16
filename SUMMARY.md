@@ -4,6 +4,7 @@
 
 * [Hack The Box](README.md)
   * [Desafios](capture-the-flag/hack-the-box/challenges/README.md)
+    * [C. O. P](capture-the-flag/hack-the-box/challenges/c.-o.-p.md)
     * [Photon Lockdown](capture-the-flag/hack-the-box/challenges/photon-lockdown.md)
     * [RenderQuest](capture-the-flag/hack-the-box/challenges/renderquest.md)
 * [Web Security Academy](capture-the-flag/web-security-academy/README.md)
