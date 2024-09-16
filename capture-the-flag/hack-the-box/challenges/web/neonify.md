@@ -2,7 +2,11 @@
 
 > É hora de uma brilhante revelação de um nunca antes visto "neonificador" de texto. Venha testar nosso mais novo website e faça qualquer texto brilhar como um tubo de neon de lo-fi.
 
-Esse desafio consiste numa aplicação web em Ruby que estiliza a entrada do usuário para que ela receba um efeito Neon. A aplicação possui apenas um campo para entrada de dados e um botão para enviar o texto informado.
+Esse desafio consiste numa aplicação web em Ruby que estiliza a entrada do usuário para que ela receba um efeito Neon.&#x20;
+
+## Reconhecimento
+
+A aplicação possui apenas um campo para entrada de dados e um botão para enviar o texto informado.
 
 <figure><img src="../../../../.gitbook/assets/ctfhtbchallengesneonifyhomepage.png" alt=""><figcaption><p>Neonify - Tela inicial</p></figcaption></figure>
 
@@ -51,7 +55,15 @@ end
 ```
 {% endcode %}
 
-Esse código valida o parâmetro POST `neon` por meio de [regular expression](https://www.devmedia.com.br/iniciando-expressoes-regulares/6557) e identifica a presença de caracteres que não sejam numerais ou letras de A a Z. Logo a seguir, esse parâmetro é retornado para alimentar o template na página `index`. Pesquisando, descobri que é possível o [bypass dessa expressão regular](https://exploit-notes.hdks.org/exploit/web/framework/ruby/ruby-on-rails-pentesting/#erb-template-injection) informando um payload de Server-Side Template Injection logo antes de uma quebra de linha. Dessa forma, a aplicação não consegue validar o payload malicioso e permite a injeção de templates na página. O payload final ficou da seguinte forma:
+Esse código valida o parâmetro POST `neon` por meio de [regular expression](https://www.devmedia.com.br/iniciando-expressoes-regulares/6557) e identifica a presença de caracteres que não sejam numerais ou letras de A a Z. Logo a seguir, esse parâmetro é retornado para alimentar o template na página `index`.
+
+## Exploração
+
+Pesquisando, descobri que é possível o [bypass da expressão regular](https://exploit-notes.hdks.org/exploit/web/framework/ruby/ruby-on-rails-pentesting/#erb-template-injection) informando um payload de Server-Side Template Injection logo antes de uma quebra de linha. Dessa forma, a aplicação não consegue validar o payload malicioso e permite a injeção de templates na página.
+
+## Prova de Conceito
+
+O payload final ficou da seguinte forma:
 
 ```ruby
 <%25= File.open('flag.txt').read %25>

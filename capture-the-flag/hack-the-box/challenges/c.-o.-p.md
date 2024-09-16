@@ -2,7 +2,11 @@
 
 > O C.O.P (Culto dos Pickles) começou uma loja web para vender sua mercadoria. Acreditamos que os fundos estejam sendo usados para operações ilícitas de propaganda baseadas em pickles! Investigue o site e tente encontrar uma forma de interceptar a operação deles!
 
-A descrição por si só dá uma dica muito importante para a resolução desse desafio. Podemos baixar o código-fonte da aplicação e ver que se trata de uma aplicação web em Python utilizando Flask. Temos apenas dois endpoints, sendo que um trás a listagem dos produtos cadastrados:
+A descrição por si só dá uma dica muito importante para a resolução desse desafio.&#x20;
+
+## Reconhecimento
+
+Podemos baixar o código-fonte da aplicação e ver que se trata de uma aplicação web em Python utilizando Flask. Temos apenas dois endpoints, sendo que um trás a listagem dos produtos cadastrados:
 
 <figure><img src="../../../.gitbook/assets/ctfhtbchallengescopindex.png" alt=""><figcaption><p>C. O. P - Página inicial da aplicação</p></figcaption></figure>
 
@@ -71,6 +75,7 @@ SNIP...
 
 A instrução na linha destacada está utilizando uma funcionalidade de [filtro do Flask](https://flask.palletsprojects.com/en/2.3.x/templating/#registering-filters) que deve ser definida pela aplicação. A definição desse filtro pode ser encontrada no arquivo `app.py`:
 
+{% code title="app.py" %}
 ```python
 ...SNIP
 @app.template_filter('pickle')
@@ -78,8 +83,13 @@ def pickle_loads(s):
     return pickle.loads(base64.b64decode(s))
 SNIP...
 ```
+{% endcode %}
 
-Perceba que esse filtro é processado por uma função do [pickle](https://docs.python.org/pt-br/3/library/pickle.html), uma biblioteca de serialização do Python. A função é responsável por decodificar a entrada em base64 e então serializar ela através do pickle. Entretanto, buscando sobre essa biblioteca, foi possível [encontrar uma vulnerabilidade](https://davidhamann.de/2020/04/05/exploiting-python-pickle/) nela que permite execução de código remotamente. Para isso, precisamos criar uma classe com o payload da RCE, usar a função `dumps` da biblioteca pickle para desserializar um objeto dessa classe e então passar esse objeto desserializado codificado em base64 para a aplicação.&#x20;
+## Exploração
+
+Perceba que o filtro definido é processado por uma função do [pickle](https://docs.python.org/pt-br/3/library/pickle.html), uma biblioteca de serialização do Python. A função é responsável por decodificar a entrada em base64 e então serializar ela através do pickle. Entretanto, buscando sobre essa biblioteca, foi possível [encontrar uma vulnerabilidade](https://davidhamann.de/2020/04/05/exploiting-python-pickle/) nela que permite execução de código remotamente. Para isso, precisamos criar uma classe com o payload da RCE, usar a função `dumps` da biblioteca pickle para desserializar um objeto dessa classe e então passar esse objeto desserializado codificado em base64 para a aplicação.  A partir disso, podemos aproveitar vulnerabilidade de SQL injection para injetar o payload na requisição.
+
+## Prova de Conceito
 
 {% code title="poc.py" lineNumbers="true" %}
 ```python
