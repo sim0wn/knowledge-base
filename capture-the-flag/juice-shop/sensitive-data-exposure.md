@@ -47,3 +47,21 @@ Com isso, podemos usar um serviço de carteira de criptomoedas (no meu caso, uti
 ```
 
 Por fim, conforme especificado no comentário em que a seed phrase foi exposta, inserir no endpoint `/juicy-nft` para resolver o desafio.
+
+## Visual Geo Stalking
+
+> Determine a resposta para a pergunta de segurança da Emma através de uma foto que ela enviou ao mural de fotos e use-a para redefinir sua senha através do mecanismo de "Esqueci minha senha"
+
+Primeiramente, precisamos saber qual a pergunta de segurança para começar a buscar a resposta.
+
+<figure><img src="../../.gitbook/assets/ctfjuice_shopsdeemma_security_question.png" alt=""><figcaption><p>Juice Shop - Pergunta de segurança da Emma</p></figcaption></figure>
+
+Nesse caso, a pergunta de segurança é a primeira empresa que ela trabalhou enquanto adulta. Agora, podemos navegar até o mural de fotos e abrir a foto que ela publicou.
+
+<figure><img src="../../.gitbook/assets/ctfjuice_shopsdeemma_post.png" alt=""><figcaption><p>Juice Shop - Imagem publicada pela Emma</p></figcaption></figure>
+
+Aparentemente é apenas a imagem de um prédio. Porém, como o título do desafio sugere, podemos analisar visualmente a imagem para encontrar a resposta. Ao percorrer a imagem ampliada, é possível encontrar o seguinte "cartaz":
+
+<figure><img src="../../.gitbook/assets/ctfjuice_shopsdeitsec.png" alt=""><figcaption><p>Juice Shop - Resposta à pergunta de segurança da Emma</p></figcaption></figure>
+
+Com isso, podemos deduzir que ela trabalhado na empresa "ITsec". Inserindo essa resposta no formulário de redefinição de senha, somos capazes de alterar a senha de Emma e o desafio é solucionado.
