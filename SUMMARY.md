@@ -8,6 +8,7 @@
       * [ApacheBlaze](capture-the-flag/hack-the-box/challenges/web/apacheblaze.md)
       * [C. O. P](capture-the-flag/hack-the-box/challenges/web/cult-of-pickle.md)
       * [Neonify](capture-the-flag/hack-the-box/challenges/web/neonify.md)
+      * [No-Threshold](capture-the-flag/hack-the-box/challenges/web/no-threshold.md)
       * [RenderQuest](capture-the-flag/hack-the-box/challenges/renderquest.md)
     * [Photon Lockdown](capture-the-flag/hack-the-box/challenges/photon-lockdown.md)
 * [Web Security Academy](capture-the-flag/web-security-academy/README.md)
