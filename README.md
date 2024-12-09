@@ -1,7 +1,8 @@
 ---
 description: >-
-  Um GitBook destinado a agregar conhecimento em cibersegurança por meio de
-  resoluções de desafios documentados e materiais de estudo.
+  Um repositório de conhecimento destinado a agregar conhecimento de
+  cibersegurança por meio de resoluções de desafios documentadas e materiais de
+  estudo.
 ---
 
 # Logs
