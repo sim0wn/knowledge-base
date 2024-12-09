@@ -1,8 +1,12 @@
 # Table of contents
 
+## Boas-vindas <a href="#welcome" id="welcome"></a>
+
+* [Logs](README.md)
+
 ## Capture the Flag
 
-* [Hack The Box](README.md)
+* [Hack The Box](<README (1).md>)
   * [Desafios](capture-the-flag/hack-the-box/challenges/README.md)
     * [Web](capture-the-flag/hack-the-box/challenges/web/README.md)
       * [ApacheBlaze](capture-the-flag/hack-the-box/challenges/web/apacheblaze.md)
