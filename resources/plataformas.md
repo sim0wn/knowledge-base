@@ -14,9 +14,9 @@ Estudantes têm acesso a um desconto exclusivo na assinatura, bastando apenas re
 {% endtab %}
 
 {% tab title="Hack The Box CTF" %}
-Já na plataforma de [Capture The Flag](https://ctf.hackthebox.com/), usuários mais experientes podem se reunir em times e se cadastrar em campeonatos da plataforma. Com isso, é possível concorrer a prêmios e obter destaque. Além disso, o Hack The Box organiza campeonatos anuais, tais como:
+Já na plataforma de [Capture The Flag](https://ctf.hackthebox.com/), usuários mais experientes podem se reunir em times e se cadastrar em campeonatos da plataforma. Com isso, é possível concorrer a prêmios e obter destaque. Além disso, o próprio Hack The Box organiza campeonatos temáticos anuais, tais como:
 
-<table data-view="cards"><thead><tr><th align="center"></th><th></th></tr></thead><tbody><tr><td align="center"><strong>University</strong></td><td>Destinado aos estudantes universitários.</td></tr><tr><td align="center"><strong>Business</strong></td><td>Destinado às organizações.</td></tr><tr><td align="center"><strong>Cyber Apocalypse</strong></td><td>Um evento organizado anualmente que não tem restrições e permite a participação do público geral.</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th></th></tr></thead><tbody><tr><td align="center"><strong>Cyber Apocalypse</strong></td><td>Destinado ao público geral.</td></tr><tr><td align="center"><strong>University CTF</strong></td><td>Destinado aos estudantes universitários.</td></tr><tr><td align="center"><strong>Business CTF</strong></td><td>Destinado às organizações.</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 

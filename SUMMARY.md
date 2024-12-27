@@ -7,6 +7,8 @@
 ## Capture the Flag
 
 * [Hack The Box](<README (1).md>)
+  * [Máquinas](capture-the-flag/hack-the-box/machines/README.md)
+    * [Sea](capture-the-flag/hack-the-box/machines/sea.md)
   * [Desafios](capture-the-flag/hack-the-box/challenges/README.md)
     * [Web](capture-the-flag/hack-the-box/challenges/web/README.md)
       * [ApacheBlaze](capture-the-flag/hack-the-box/challenges/web/apacheblaze.md)
@@ -14,7 +16,8 @@
       * [Neonify](capture-the-flag/hack-the-box/challenges/web/neonify.md)
       * [No-Threshold](capture-the-flag/hack-the-box/challenges/web/no-threshold.md)
       * [RenderQuest](capture-the-flag/hack-the-box/challenges/renderquest.md)
-    * [Photon Lockdown](capture-the-flag/hack-the-box/challenges/photon-lockdown.md)
+    * [Hardware](capture-the-flag/hack-the-box/challenges/hardware/README.md)
+      * [Photon Lockdown](capture-the-flag/hack-the-box/challenges/hardware/photon-lockdown.md)
 * [Web Security Academy](capture-the-flag/web-security-academy/README.md)
   * [Teste de API](capture-the-flag/web-security-academy/api-testing.md)
 * [Juice Shop](capture-the-flag/juice-shop/README.md)
