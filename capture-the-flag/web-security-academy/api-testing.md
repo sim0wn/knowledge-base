@@ -1,6 +1,6 @@
-# Teste de API
+# API Testing
 
-## Utilizando a documentação para explorar um endpoint de API
+## Exploiting an API endpoint using documentation
 
 > Para solucionar esse laboratório, encontre a documentação da API e remova o `carlos`. Você pode autenticar-se utilizando as credenciais `wiener:peter`.
 
@@ -18,7 +18,7 @@ Após a autenticação, a aplicação apresenta um formulário em que é possív
 
 Enviei essa requisição para o Burp Repeater, removi o corpo da requisição (nesse caso, os dados JSON), alterei o método para DELETE e substituí o `wiener` por `carlos`. Ao enviar a requisição modificada, a aplicação não realiza nenhum controle e permite a exclusão do usuário `carlos`, concluindo a resolução desse laboratório.
 
-## Encontrando e explorando um endpoint de API não utilizado
+## Finding and exploiting an unused API endpoint
 
 > Para solucionar esse laboratório, explore um endpoint de API escondido para comprar uma **Lightweight l33t Leather Jacket**. Você pode se autenticar usando as credenciais `wiener:peter`.
 
@@ -32,7 +32,7 @@ Como no desafio [anterior](api-testing.md#utilizando-a-documentacao-para-explora
 
 adicionar o cabeçalho `Content-Type: application/json` e enviar, percebe-se que a aplicação apresenta uma resposta bem-sucedida indicando que o valor do produto agora é zero. Por fim, para resolver o desafio, basta adicionar uma **Lightweight l33t Leather Jacket** ao carrinho e prosseguir com a compra. Feito isso, o laboratório será marcado como resolvido.
 
-## Explorando uma vulnerabilidade de atribuição em massa
+## Exploiting a mass assignment vulnerability
 
 > Para solucionar o laboratório, encontre e explore a vulnerabilidade de atribuição em massa para comprar uma **Lightweight l33t Leather Jacket**. Você pode se autenticar utilizando as credenciais `wiener:peter`.
 
@@ -60,7 +60,7 @@ Nesse laboratório, pode-se autenticar, navegar pela aplicação e adicionar o i
 
 Observe o objeto `chosen_discount` que possui um atributo `percentage`. Ao mudar o método da requisição ao endpoint `/api/checkout` para `POST` e enviar um objeto alterando o atributo `percentage` do objeto `chose_discount` para 100, obtém-se 100% de desconto no produto, permitindo que ele seja comprado. Com isso, o laboratório é resolvido.
 
-## Explorando poluição de parâmetro do lado servidor em uma string de consulta
+## Exploiting server-side parameter pollution in a query string
 
 > Para solucionar o laboratório, faça autentique-se como `administrator` e remova o usuário `carlos`.
 
