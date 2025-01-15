@@ -6,7 +6,7 @@ A [Hack The Box](https://app.hackthebox.com/) possui múltiplas plataformas para
 
 {% tabs %}
 {% tab title="Hack The Box Academy" %}
-A plataforma [Academy](https://academy.hackthebox.com/) pode ser considerada um ponto de partida para estudantes de cibersegurança. Ela proporciona um ambiente de aprendizagem que pode auxiliar desde os iniciantes aos mais experientes, com seu conteúdo dividido em módulos classificados por níveis[^2]. Qualquer usuário que se cadastrar terá acesso aos módulos do [nível fundamental](#user-content-fn-3)[^3] gratuitamente, sendo que é necessário completar os módulos para adquirir "cubos", uma espécie de moeda dentro da plataforma que pode ser trocada pelo acesso a outros módulos. Caso você queria se aprofundar na plataforma, será necessário pagar para adquirir mais cubos ou assinar a plataforma.
+A plataforma [Academy](https://referral.hackthebox.com/mz7Q5ef) pode ser considerada um ponto de partida para estudantes de cibersegurança. Ela proporciona um ambiente de aprendizagem que pode auxiliar desde os iniciantes aos mais experientes, com seu conteúdo dividido em módulos classificados por níveis[^2]. Qualquer usuário que se cadastrar terá acesso aos módulos do [nível fundamental](#user-content-fn-3)[^3] gratuitamente, sendo que é necessário completar os módulos para adquirir "cubos", uma espécie de moeda dentro da plataforma que pode ser trocada pelo acesso a outros módulos. Caso você queria se aprofundar na plataforma, será necessário pagar para adquirir mais cubos ou assinar a plataforma.
 
 {% hint style="info" %}
 Estudantes têm acesso a um desconto exclusivo na assinatura, bastando apenas realizar o cadastro com o e-mail institucional.
