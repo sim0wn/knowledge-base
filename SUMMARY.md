@@ -8,6 +8,7 @@
 
 * [Hack The Box](<README (1).md>)
   * [Máquinas](capture-the-flag/hack-the-box/machines/README.md)
+    * [Cicada](capture-the-flag/hack-the-box/machines/cicada.md)
     * [Sea](capture-the-flag/hack-the-box/machines/sea.md)
     * [Trickster](capture-the-flag/hack-the-box/machines/trickster.md)
   * [Desafios](capture-the-flag/hack-the-box/challenges/README.md)
