@@ -2,7 +2,7 @@
 
 ## Resumo
 
-
+Essa é uma máquina Windows classificada de dificuldade fácil que envolve a exploração básica de um Active Directory. De início, foi necessário identificar o serviço SMB em execução, e então obter uma pasta compartilhada disponível publicamente que continha uma senha. Após isso, foi necessário enumerar usuários por meio de RID brute-force e então realizar um ataque de password spraying para obter credenciais válidas. Com isso, foi possível utilizar o `ldapdomaindump` para extrair informações sobre o Active Directory, possibilitando encontrar outras credenciais válidas. A partir dessas credenciais, foi possível listar outra pasta compartilhada no SMB, dessa vez com as credenciais do usuário `emily.oscars`, o qual permitia acesso via `WinRM`, possibilitando acesso remoto e encontrar a primeira flag. Para escalar privilégio, foi possível explorar o privilégio `SeBackupPrivilege` do usuário autenticado para extrair o hash do usuário administrador do sistema.
 
 ## Reconhecimento
 
@@ -150,4 +150,18 @@ SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
 SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
 ```
 
-É possível escalar privilégio utilizando a permissão [SeBackupPrivilege](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/privileged-groups-and-token-privileges.html#local-attack)
+É possível escalar privilégio utilizando a permissão [SeBackupPrivilege](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/privileged-groups-and-token-privileges.html#local-attack). Utilizando os seguintes comandos, é possível criar um diretório `C:\Temp` e copiar os arquivos `SAM` e `SYSTEM` utilizando o `robocopy`:
+
+```
+mkdir C:\Temp
+robocopy /b C:\Windows\System32\Config C:\Temp SAM
+robocopy /b C:\Windows\System32\Config C:\Temp SYSTEM
+```
+
+Com isso, é possível baixar os arquivos na máquina local por meio do comando `download` do `evil-winrm`, e extrair os hashes por meio do `secretsdump.py`, script disponível por meio do `ImPacket`.
+
+<figure><img src="../../../.gitbook/assets/ctfhtbcicadasecretsdump.png" alt=""><figcaption><p>HTB Cicada - Hashes do secretsdump.py</p></figcaption></figure>
+
+Por fim, basta se autenticar por meio do `evil-winrm` como usuário administrador utilizando a técnica de [Pass The Hash](https://www.crowdstrike.com/en-us/cybersecurity-101/cyberattacks/pass-the-hash-attack/).
+
+<figure><img src="../../../.gitbook/assets/ctfhtbcicadapth.png" alt=""><figcaption><p>HTB Cicada - Pass The Hash do usuário Administrator</p></figcaption></figure>

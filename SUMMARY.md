@@ -11,6 +11,7 @@
     * [Cicada](capture-the-flag/hack-the-box/machines/cicada.md)
     * [Sea](capture-the-flag/hack-the-box/machines/sea.md)
     * [Trickster](capture-the-flag/hack-the-box/machines/trickster.md)
+    * [Yummy](capture-the-flag/hack-the-box/machines/yummy.md)
   * [Desafios](capture-the-flag/hack-the-box/challenges/README.md)
     * [Web](capture-the-flag/hack-the-box/challenges/web/README.md)
       * [ApacheBlaze](capture-the-flag/hack-the-box/challenges/web/apacheblaze.md)
