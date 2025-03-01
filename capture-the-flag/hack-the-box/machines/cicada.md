@@ -108,7 +108,7 @@ Utilizando a ferramenta `ldapdomaindump`, obtive os seguintes resultados:
 
 Analisando o resultado do arquivo `domain_users.json`, é possível encontrar a senha do usuário david.orelious:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>HTB Cicada - Senha do usuário David</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption><p>HTB Cicada - Senha do usuário David</p></figcaption></figure>
 
 ### Usuário emily.oscars
 
