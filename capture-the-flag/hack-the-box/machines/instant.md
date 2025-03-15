@@ -42,41 +42,41 @@ echo $'10.10.11.37\tinstant.htb' | sudo tee -a /etc/hosts
 
 A seguinte página web foi retornada ao acessar o endereço `http://instant.htb`:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>HTB Instant — página inicial da aplicação</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbinstanthomepage.png" alt=""><figcaption><p>HTB Instant — página inicial da aplicação</p></figcaption></figure>
 
 A página sugere fazer o download de uma aplicação para realização de transações bancárias. Realizei uma varredura com o [ffuf](https://github.com/ffuf/ffuf) em busca de subdomínios e uma varredura com o [feroxbuster](https://github.com/epi052/feroxbuster) em busca de outros diretórios. Porém, em ambos os casos, não obtive nada muito relevante, então decidi realizar o download sugerido. Ao clicar em `Download Now`, é realizado o download de uma aplicação Android. Utilizando a ferramenta [jadx](https://github.com/skylot/jadx), descompilei a aplicação para analisar o código-fonte:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>HTB Instant — arquivos principais da aplicação mobile</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbinstantdecompiled-apk.png" alt=""><figcaption><p>HTB Instant — arquivos principais da aplicação mobile</p></figcaption></figure>
 
 A princípio, pode-se notar que a aplicação implementa um [CRUD](https://developer.mozilla.org/pt-BR/docs/Glossary/CRUD) para autenticação, gerir as transações e o perfil de um usuário autenticado. Além disso, ela utiliza a biblioteca [okhttp3](https://square.github.io/okhttp/), uma biblioteca comumente utilizada para realizar requisições web em aplicações Android. Por conta disso, procurei por requisições que estivessem sendo realizadas, e encontrei o endpoint para uma API:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>HTB Instant — requisição à API exposta</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbinstantapi-call.png" alt=""><figcaption><p>HTB Instant — requisição à API exposta</p></figcaption></figure>
 
 Nessa requisição, além do endpoint para a API, também é possível notar que a aplicação passa um token de acesso ao header `Authorization`, o que indica que essa API necessita de um token para ser acessada. Buscando por outras referências ao domínio `instant.htb` com a ferramenta de busca do jadx, encontrei uma referência em que o token de acesso é exposto:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>HTB Instant — token de acesso à API exposto</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbinstantexposed-api-token.png" alt=""><figcaption><p>HTB Instant — token de acesso à API exposto</p></figcaption></figure>
 
 Esse token permite acesso à API como usuário administrador:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>HTB Instant — acesso de administrador à API</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbinstantadmin-auth.png" alt=""><figcaption><p>HTB Instant — acesso de administrador à API</p></figcaption></figure>
 
 Entretanto, nenhuma das rotas de API descobertas até então pareciam muito úteis. Explorando um pouco mais a aplicação, encontrei nos Resources um arquivo XML que indicava a quais fontes a aplicação poderia enviar requisições:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>HTB Instant — endpoint de um Swagger encontrado</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbinstantswagger-endpoint.png" alt=""><figcaption><p>HTB Instant — endpoint de um Swagger encontrado</p></figcaption></figure>
 
 Foi possível encontrar outro subdomínio, o `swagger-ui.instant.htb`. O [Swagger](https://swagger.io/) é uma ferramenta utilizada para expor documentações interativas de APIs. Acessando essa página do Swagger, é possível autenticar-se utilizando o token descoberto anteriormente para realizar as consultas:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>HTB Instant ­­— página do Swagger</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbinstantswagger.png" alt=""><figcaption><p>HTB Instant ­­— página do Swagger</p></figcaption></figure>
 
 Além disso, descobri a rota `/api/v1/admin/read/log`. Essa rota espera um parâmetro `log_file_name`, o qual deveria ser o nome de um arquivo de log presente na máquina. Ao enviar a requisição informando a esse parâmetro o valor de exemplo (1.log), ela retorna o conteúdo do arquivo e o caminho absoluto dele (nesse caso, `/home/shirohige/logs/1.log`):
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>HTB Instant — funcionalidade para leitura de logs </p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbinstantread-log.png" alt=""><figcaption><p>HTB Instant — funcionalidade para leitura de logs </p></figcaption></figure>
 
 ## Exploração
 
 Levando em consideração o caminho absoluto retornado, tentei voltar um diretório com `../` e acessar o arquivo `.ssh/id_rsa`, onde deveria estar contido a chave privada SSH do usuário `shirohige`. Como resultado, a chave privada do usuário foi retornada:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption><p>HTB Instant — leitura arbitrária de arquivos</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbinstantssh-key.png" alt=""><figcaption><p>HTB Instant — leitura arbitrária de arquivos</p></figcaption></figure>
 
 Salvei esse resultado em JSON num arquivo `id_rsa.json` e processei ele utilizando o jq, o sed e o tr para salvar somente o conteúdo da chave:
 
@@ -94,4 +94,4 @@ ssh -i id_rsa shirohige@instant.htb
 
 Durante o processo de enumeração após ganhar acesso inicial à máquina, encontrei um subdiretório `backups` no diretório `/opt` da máquina. Esse diretório continha um subdiretório `Solar-PuTTY` com um arquivo `sessions-backup.dat`. Pesquisando por esse tipo de arquivo, descobri que se tratava de um backup da ferramenta `Solar-PuTTY`, o qual ao ser recuperado pode revelar as credenciais que tinham sido salvas na aplicação. Pesquisando por uma forma de recuperar as credenciais desse arquivo, encontrei um [script](https://gist.github.com/xHacka/052e4b09d893398b04bf8aff5872d0d5) disponível publicamente no GitHub o qual faz essa tarefa. Utilizando o script, encontrei as credenciais para o usuário `root`:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption><p>HTB Instant — credenciais do usuário root</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ctfhtbinstantsolar-putty-decrypt.png" alt=""><figcaption><p>HTB Instant — credenciais do usuário root</p></figcaption></figure>
