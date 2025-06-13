@@ -11,6 +11,7 @@
     * [Chemistry](capture-the-flag/hack-the-box/machines/chemistry.md)
     * [Cicada](capture-the-flag/hack-the-box/machines/cicada.md)
     * [Instant](capture-the-flag/hack-the-box/machines/instant.md)
+    * [Checker](capture-the-flag/hack-the-box/machines/checker.md)
     * [Sea](capture-the-flag/hack-the-box/machines/sea.md)
     * [Trickster](capture-the-flag/hack-the-box/machines/trickster.md)
     * [Yummy](capture-the-flag/hack-the-box/machines/yummy.md)
